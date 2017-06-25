@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="undefined">
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio page</title>
+    <meta content="" name="author">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="stylesheet" href="/assets/css/normalize.css">
+    <link rel="stylesheet" href="/assets/css/foundation.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script src="/assets/js/foundation.js" defer></script>
+    <script src="/assets/js/app.js" defer></script><!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <section class="hero">
+      <div class="container">
+        <div class="socials">
+          <ul class="socials__list">
+            <li class="socials__item"><a class="socials__link" href="https://vk.com/" target="_blank">
+                <svg class="social-icon social-icon__vk">
+                  <use xlink:href="assets/images/sprite.svg#vk"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link" href="https://github.com/" target="_blank">
+                <svg class="social-icon social-icon__github">
+                  <use xlink:href="assets/images/sprite.svg#github"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link" href="https://linkedin.com/" target="_blank">
+                <svg class="social-icon social-icon__in">
+                  <use xlink:href="assets/images/sprite.svg#in"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+        <div class="hamburger-menu container_align_right">
+          <div class="hamburger-menu__icon"></div>
+          <div class="hamburger-menu__menu">
+            <nav class="menu">
+              <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
+                <li class="menu__item"><a class="menu__link" href="blog.html">Блог</a></li>
+                <li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li>
+                <li class="menu__item"><a class="menu__link" href="login.html">Авторизация</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="developer hero__developer container container_col container_align_center">
+        <div class="developer__image"><img class="developer__photo" src="/assets/images/hero.png" alt="Владимир Астахов"/></div>
+        <div class="developer__name">
+          <p>Владимир Астахов</p>
+        </div>
+        <div class="developer__info">
+          <p>Личный сайт веб-разработчика</p>
+        </div>
+      </div><a class="arrow-down arrow-down_center" href="#"></a>
+      <div class="triangles">
+        <div class="triangles__left">
+          <svg class="triangle">
+            <use xlink:href="assets/images/about_bg_left.svg#Layer_1"></use>
+          </svg>
+        </div>
+        <div class="triangles__right">
+          <svg class="triangle">
+            <use xlink:href="assets/images/about_bg_right.svg#Layer_1"></use>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section class="content">
+      <div class="content__title title title__title--lines">Мои работы</div>
+      <!--.content__title
+      +titleImage(
+          'content',
+          {front: 'Мои работы', back: 'works'}
+      )
+      -->
+      <div class="container">
+        <div class="content__left container">
+          <div class="work-info container_center_center">
+            <div class="work-info__title content__title content__title--small title title__title--lines">Сайт школы онлайн Образования</div>
+            <div class="work-info__skills">HTML , CSS, JAVASCRIPT</div>
+            <div class="work-info__link"><a class="work-info__button_link" href="#">Посмотреть сайт</a></div>
+          </div>
+        </div>
+        <div class="content__right content__padding_none">
+          <div class="work-slider container container_col">
+            <div class="work-slider__image container_center_center"><img src="/assets/images/portfolio-current.png" alt="Работа 1"></div>
+            <div class="work-slider__navigation container container_center_center">
+              <div class="work-slider__nav work-slider__nav--down">
+                <div class="work-slider__nav_image"><img src="/assets/images/portfolio-down.jpg" alt="Работа 2"></div>
+                <div class="work-slider__nav_arrow work-slider__nav_arrow--down"></div>
+              </div>
+              <div class="work-slider__nav work-slider__nav--up">
+                <div class="work-slider__nav_image"><img src="/assets/images/portfolio-down.jpg" alt="Работа 3"></div>
+                <div class="work-slider__nav_arrow work-slider__nav_arrow--up"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="map">
+      <div class="background"><img class="background__image" src="" alt="map"/></div>
+      <div class="container container_center_center">
+        <div class="map__title_background">about</div>
+        <div class="map__title_text">Что обо мне говорят</div>
+      </div>
+      <div class="reviews container container_left_top">
+        <div class="reviews__review">
+          <div class="reviews__text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</div>
+          <div class="reviews__author container container_left_center">
+            <div class="reviews__photo"><img src="" alt=""/></div>
+            <div class="reviews__name">
+              <p>Ковальчук Дмитрий</p>
+              <p>основатель Loftschool</p>
+            </div>
+          </div>
+        </div>
+        <div class="reviews__review">
+          <div class="reviews__text">Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</div>
+          <div class="reviews__author container container_left_center">
+            <div class="reviews__photo"><img src="" alt=""/></div>
+            <div class="reviews__name">
+              <p>Сабанцев Владимир</p>
+              <p>преподаватель</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container container_center_center">
+        <div class="contacts-form">
+          <div class="contacts-form__title">Связаться со мной</div>
+          <div class="contacts-form__fields">
+            <input class="contacts-form__input contacts-form__input--name" placeholder="Имя"/>
+            <input class="contacts-form__input contacts-form__input--email" placeholder="Email"/>
+            <textarea class="contacts-form__textarea"></textarea>
+          </div>
+          <div class="contacts-form__buttons">
+            <button class="contacts-form__button contacts-form__button--submit">Отправить</button>
+            <button class="contacts-form__button contacts-form__button--clear">Очистить</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container container_justify_center footer__row">
+        <div class="col footer__column_left container_center_center">
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
+              <li class="menu__item"><a class="menu__link" href="blog.html">Блог</a></li>
+              <li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li>
+              <li class="menu__item"><a class="menu__link" href="login.html">Авторизация</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col footer__column_right container_center_center">
+          <div class="socials">
+            <ul class="socials__list">
+              <li class="socials__item"><a class="socials__link" href="https://vk.com/" target="_blank">
+                  <svg class="social-icon social-icon__vk social-icon__rounded">
+                    <use xlink:href="assets/images/sprite.svg#vk_round"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="https://github.com/" target="_blank">
+                  <svg class="social-icon social-icon__github social-icon__rounded">
+                    <use xlink:href="assets/images/sprite.svg#github_round"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="https://linkedin.com/" target="_blank">
+                  <svg class="social-icon social-icon__in social-icon__rounded">
+                    <use xlink:href="assets/images/sprite.svg#in_round"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="container container_justify_center footer__row footer__text--semitransparent">
+        <div class="col footer__column_left container_center_center">
+          <p>Я веб-разработчик из Новосибирска, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.</p>
+        </div>
+        <div class="col footer__column_right container_center_center">
+          <p>&copy Владимир Астахов | создано с любовью в LoftSchool | 2016</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
