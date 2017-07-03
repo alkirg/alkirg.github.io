@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<html class="undefined">
+<html class="page-index">
   <head>
-   	<base href="http://akwd.ru/loftschool/">
+  	<base href="http://akwd.ru/lostschool/">
     <meta charset="utf-8">
-    <title>About page</title>
+    <title>Владимир Астахов</title>
     <meta content="" name="author">
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/foundation.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <script src="assets/js/foundation.js" defer></script>
-    <script src="assets/js/app.js" defer></script><!--[if lt IE 9]>
+    <!--link(rel='stylesheet' href='/assets/css/normalize.css')-->
+    <link rel="stylesheet" href="/assets/css/foundation.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script src="/assets/js/foundation.js" defer></script>
+    <script src="/assets/js/app.js" defer></script><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
-    <section class="hero">
-      <div class="container">
-        <div class="socials">
+    <header class="header page-index__header">
+      <div class="header__login"><a class="header__login_button" href="login.html">Авторизоваться</a></div>
+    </header>
+    <main class="main">
+      <div class="user-info main__user_info">
+        <div class="user-info__image"><img src="assets/images/index-hero.jpg" alt=""></div>
+        <div class="user-info__person">
+          <div class="user-info__name">Владимир Астахов</div>
+          <div class="user-info__subtitle">Личный сайт веб разработчика</div>
+        </div>
+        <div class="socials user-info__socials">
           <ul class="socials__list">
             <li class="socials__item"><a class="socials__link" href="https://vk.com/" target="_blank">
                 <svg class="social-icon social-icon__vk">
@@ -35,176 +43,12 @@
                 </svg></a></li>
           </ul>
         </div>
-        <div class="hamburger-menu container_align_right">
-          <div class="hamburger-menu__icon"></div>
-          <div class="hamburger-menu__menu">
-            <nav class="menu">
-              <ul class="menu__list">
-                <li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
-                <li class="menu__item"><a class="menu__link" href="blog.html">Блог</a></li>
-                <li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li>
-                <li class="menu__item"><a class="menu__link" href="login.html">Авторизация</a></li>
-              </ul>
-            </nav>
-          </div>
+        <div class="user-info__links"><a class="user-info__link" href="works.html">Мои работы</a><a class="user-info__link" href="about.html">Обо мне</a><a class="user-info__link" href="blog.html">Блог</a>
         </div>
       </div>
-      <div class="developer hero__developer container container_col container_align_center">
-        <div class="developer__image"><img class="developer__photo" src="assets/images/hero.png" alt="Владимир Астахов"/></div>
-        <div class="developer__name">
-          <p>Владимир Астахов</p>
-        </div>
-        <div class="developer__info">
-          <p>Личный сайт веб-разработчика</p>
-        </div>
-      </div><a class="arrow-down arrow-down_center" href="#"></a>
-      <div class="triangles">
-        <div class="triangles__left">
-          <svg class="triangle">
-            <use xlink:href="assets/images/about_bg_left.svg#Layer_1"></use>
-          </svg>
-        </div>
-        <div class="triangles__right">
-          <svg class="triangle">
-            <use xlink:href="assets/images/about_bg_right.svg#Layer_1"></use>
-          </svg>
-        </div>
-      </div>
-    </section>
-    <section class="content container content__about">
-      <div class="content__left">
-        <!--.content__triangle.triangle__left+triangle('assets/images/about_bg_left.svg#Layer_1')
-        -->
-        <div class="content__title title title__title--lines">Обо мне</div>
-        <div class="content__photo"><img class="content__photo_img" src="assets/images/about-photo.jpg" alt="Владимир Астахов"></div>
-        <div class="content__info">
-          <div class="content__title content__title--small title title__title--lines">Кто я</div>
-          <div class="content__text">
-            <p>Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.</p>
-            <p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!</p>
-          </div>
-        </div>
-      </div>
-      <div class="content__right">
-        <!--.content__triangle.triangle__right+triangle('assets/images/about_bg_right.svg#Layer_1')
-        -->
-        <div class="content__title content__title--small title title__title--lines">Чем я могу быть вам полезен</div>
-        <div class="content__text">
-          <p>Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.</p>
-        </div>
-        <div class="content__skill--margin">
-          <div class="skills">
-            <div class="skills__title">Frontend</div>
-            <div class="skills__skills">
-              <div>HTML5</div>
-              <div>90</div>
-              <div>CSS3</div>
-              <div>80</div>
-              <div>JavaScript &amp; jQuery</div>
-              <div>80</div>
-            </div>
-          </div>
-        </div>
-        <div class="content__skill--margin">
-          <div class="skills">
-            <div class="skills__title">Backend</div>
-            <div class="skills__skills">
-              <div>PHP</div>
-              <div>45</div>
-              <div>mySQL</div>
-              <div>55</div>
-              <div>Node.js &amp; npm</div>
-              <div>40</div>
-              <div>Mongo.db</div>
-              <div>60</div>
-            </div>
-          </div>
-        </div>
-        <div class="content__skill--margin">
-          <div class="skills">
-            <div class="skills__title">WorkFlow</div>
-            <div class="skills__skills">
-              <div>Git</div>
-              <div>80</div>
-              <div>Gulp</div>
-              <div>70</div>
-              <div>Bower</div>
-              <div>65</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="map">
-      <div class="map__wrapper">
-        <div class="background"><img class="background__image" src="assets/images/map.jpg" alt="Карта"/></div>
-        <div class="contacts-block">
-          <div class="contacts-block__title content__title content__title--small title title__title--lines">Контакты</div>
-          <ul class="contacts-list">
-            <li class="contacts-list__item">
-              <svg class="icon-contact icon-contact__skype icon-contact__margin">
-                <use xlink:href="assets/images/sprite.svg#skype"></use>
-              </svg>skype_kdn
-            </li>
-            <li class="contacts-list__item">
-              <svg class="icon-contact icon-contact__envelope icon-contact__margin">
-                <use xlink:href="assets/images/sprite.svg#envelope"></use>
-              </svg><a href="mailto:astahov@gmail.com">astahov@gmail.com</a>
-            </li>
-            <li class="contacts-list__item">
-              <svg class="icon-contact icon-contact__phone icon-contact__margin">
-                <use xlink:href="assets/images/sprite.svg#phone"></use>
-              </svg>+7 931 200 93 24
-            </li>
-            <li class="contacts-list__item">
-              <svg class="icon-contact icon-contact__map_marker icon-contact__margin">
-                <use xlink:href="assets/images/sprite.svg#map_marker"></use>
-              </svg>г.Новосибирск, ул. Инская, д. 5
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    </main>
     <footer class="footer">
-      <div class="container container_justify_center footer__row">
-        <div class="col footer__column_left container_center_center">
-          <nav class="menu">
-            <ul class="menu__list">
-              <li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
-              <li class="menu__item"><a class="menu__link" href="blog.html">Блог</a></li>
-              <li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li>
-              <li class="menu__item"><a class="menu__link" href="login.html">Авторизация</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="col footer__column_right container_center_center">
-          <div class="socials">
-            <ul class="socials__list">
-              <li class="socials__item"><a class="socials__link" href="https://vk.com/" target="_blank">
-                  <svg class="social-icon social-icon__vk social-icon__rounded">
-                    <use xlink:href="assets/images/sprite.svg#vk_round"></use>
-                  </svg></a></li>
-              <li class="socials__item"><a class="socials__link" href="https://github.com/" target="_blank">
-                  <svg class="social-icon social-icon__github social-icon__rounded">
-                    <use xlink:href="assets/images/sprite.svg#github_round"></use>
-                  </svg></a></li>
-              <li class="socials__item"><a class="socials__link" href="https://linkedin.com/" target="_blank">
-                  <svg class="social-icon social-icon__in social-icon__rounded">
-                    <use xlink:href="assets/images/sprite.svg#in_round"></use>
-                  </svg></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <div class="container container_justify_center footer__row footer__text--semitransparent">
-        <div class="col footer__column_left container_center_center">
-          <p>Я веб-разработчик из Новосибирска, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.</p>
-        </div>
-        <div class="col footer__column_right container_center_center">
-          <p>&copy Владимир Астахов | создано с любовью в LoftSchool | 2016</p>
-        </div>
-      </div>
+      <div class="copyright">© Владимир Астахов | создано с любовью в LoftSchool | 2016</div>
     </footer>
   </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="page-login">
   <head>
-  	<base href="http://akwd.ru/loftschool/">
+  	<base href="http://akwd.ru/lostschool/">
     <meta charset="utf-8">
     <title>Login page</title>
     <meta content="" name="author">
@@ -9,43 +9,45 @@
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/foundation.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <script src="assets/js/foundation.js" defer></script>
-    <script src="assets/js/app.js" defer></script><!--[if lt IE 9]>
+    <!--link(rel='stylesheet' href='/assets/css/normalize.css')-->
+    <link rel="stylesheet" href="/assets/css/foundation.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script src="/assets/js/foundation.js" defer></script>
+    <script src="/assets/js/app.js" defer></script><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
-    <div class="login-form container_center_center">
-      <div class="login-form__title title__title--lines login-form__title--margin_bottom">Авторизуйтесь</div>
-      <div class="container container_row container_justify_center login-form__margin_bottom">
-        <div class="login-form__icon icon icon-login"></div>
-        <input class="login-form__input login-form__input--name" placeholder="Логин" type="text"/>
-      </div>
-      <div class="container container_row container_justify_center login-form__margin_bottom">
-        <div class="login-form__icon icon icon-password"></div>
-        <input class="login-form__input login-form__input--password" placeholder="Пароль" type="password"/>
-      </div>
-      <div class="login-form__check">
-        <input class="login-form__checkbox" id="checkbox" type="checkbox"/>
-        <label class="login-form__label login-form__label--checkbox" for="checkbox">Я человек</label>
-      </div>
-      <p class="login-form__question login-form__question--margin">Вы точно не робот?</p>
-      <div class="login-form__radiobox container container_row container_justify_center">
-        <div class="login-form__radio login-form__margin_right">
-          <input class="login-form__radio_button" id="radio1" type="radio" name="radio"/>
-          <label class="login-form__label login-form__label--radio" for="radio1">Да</label>
+    <main class="main page-login__content">
+      <div class="login-form main__login_form">
+        <div class="title title__subtitle">Авторизуйтесь</div>
+        <div class="login-form__input_block">
+          <div class="login-form__icon icon icon-login"></div>
+          <input class="login-form__input" placeholder="Логин" type="text">
         </div>
-        <div class="login-form__radio">
-          <input class="login-form__radio_button" id="radio2" type="radio" name="radio"/>
-          <label class="login-form__label login-form__label--radio" for="radio2">Не уверен</label>
+        <div class="login-form__input_block">
+          <div class="login-form__icon icon icon-password"></div>
+          <input class="login-form__input" placeholder="Пароль" type="password">
         </div>
+        <div class="login-form__check">
+          <input class="login-form__checkbox" id="checkbox" type="checkbox">
+          <label class="login-form__label login-form__label--checkbox" for="checkbox">Я человек</label>
+        </div>
+        <p class="login-form__question">Вы точно не робот?</p>
+        <div class="login-form__radiobox">
+          <div class="login-form__radio">
+            <input class="login-form__radio_button" id="radio1" type="radio" name="radio">
+            <label class="login-form__label login-form__label--radio" for="radio1">Да</label>
+          </div>
+          <div class="login-form__radio">
+            <input class="login-form__radio_button" id="radio2" type="radio" name="radio">
+            <label class="login-form__label login-form__label--radio" for="radio2">Не уверен</label>
+          </div>
+        </div>
+        <div class="login-form__buttons"><a class="login-form__button" href="/">На главную</a><a class="login-form__button" href="#">Войти</a></div>
       </div>
-      <div class="login-form__buttons login-form__buttons--margin_top container container_justify_center"><a class="login-form__button" href="/loftschool/">На главную</a><a class="login-form__button" href="#">Войти</a></div>
-    </div>
-    <div class="copyright copyright__block--margin_top">
-      <p class="text__text--white">© Владимир Астахов | создано с любовью в LoftSchool | 2016</p>
-    </div>
+    </main>
+    <footer class="footer">
+      <div class="copyright">© Владимир Астахов | создано с любовью в LoftSchool | 2016</div>
+    </footer>
   </body>
 </html>

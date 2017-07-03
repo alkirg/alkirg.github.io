@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html class="undefined">
+<html class="page-blog">
   <head>
-  	<base href="http://akwd.ru/loftschool/">
+  	<base href="http://akwd.ru/lostschool/">
     <meta charset="utf-8">
     <title>Blog page</title>
     <meta content="" name="author">
@@ -9,60 +9,96 @@
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/foundation.css">
-    <link rel="stylesheet" href="assets/css/app.css">
-    <script src="assets/js/foundation.js" defer></script>
-    <script src="assets/js/app.js" defer></script><!--[if lt IE 9]>
+    <!--link(rel='stylesheet' href='/assets/css/normalize.css')-->
+    <link rel="stylesheet" href="/assets/css/foundation.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script src="/assets/js/foundation.js" defer></script>
+    <script src="/assets/js/app.js" defer></script><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
-    <section class="hero">
-      <div class="container">
-        <div class="socials">
-          <ul class="socials__list">
-            <li class="socials__item"><a class="socials__link" href="https://vk.com/" target="_blank">
-                <svg class="social-icon social-icon__vk">
-                  <use xlink:href="assets/images/sprite.svg#vk"></use>
-                </svg></a></li>
-            <li class="socials__item"><a class="socials__link" href="https://github.com/" target="_blank">
-                <svg class="social-icon social-icon__github">
-                  <use xlink:href="assets/images/sprite.svg#github"></use>
-                </svg></a></li>
-            <li class="socials__item"><a class="socials__link" href="https://linkedin.com/" target="_blank">
-                <svg class="social-icon social-icon__in">
-                  <use xlink:href="assets/images/sprite.svg#in"></use>
-                </svg></a></li>
-          </ul>
-        </div>
-        <div class="hamburger-menu container_align_right">
-          <div class="hamburger-menu__icon"></div>
-          <div class="hamburger-menu__menu">
-            <nav class="menu">
-              <ul class="menu__list">
-                <li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
-                <li class="menu__item"><a class="menu__link" href="blog.html">Блог</a></li>
-                <li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li>
-                <li class="menu__item"><a class="menu__link" href="login.html">Авторизация</a></li>
-              </ul>
-            </nav>
+    <main class="main">
+      <section class="hero">
+        <div class="hero__row">
+          <div class="socials ">
+            <ul class="socials__list">
+              <li class="socials__item"><a class="socials__link" href="https://vk.com/" target="_blank">
+                  <svg class="social-icon social-icon__vk">
+                    <use xlink:href="assets/images/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="https://github.com/" target="_blank">
+                  <svg class="social-icon social-icon__github">
+                    <use xlink:href="assets/images/sprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="https://linkedin.com/" target="_blank">
+                  <svg class="social-icon social-icon__in">
+                    <use xlink:href="assets/images/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="hamburger-menu">
+            <div class="hamburger-menu__icon"></div>
+            <div class="hamburger-menu__menu">
+              <nav class="menu">
+                <ul class="menu__list">
+                  <li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
+                  <li class="menu__item"><a class="menu__link" href="blog.html">Блог</a></li>
+                  <li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li>
+                  <li class="menu__item"><a class="menu__link" href="login.html">Авторизация</a></li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="developer hero__developer container container_col container_align_center">
-        <div class="developer__image"><img class="developer__photo" src="assets/images/hero.png" alt="Владимир Астахов"/></div>
-        <div class="developer__name">
-          <p>Владимир Астахов</p>
+        <div class="developer"><img class="developer__image" src="assets/images/hero.png" alt="Владимир Астахов">
+          <div class="developer__name">Владимир Астахов</div>
+          <div class="developer__info">Личный сайт веб-разработчика</div>
+          <!--+svgBackground('assets/images/portfolio_header.svg#Layer_1')-->
+        </div><a class="arrow-down" href="#"></a>
+        <div class="triangles">
+          <svg class="rectangle" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon class="triangle__left" points="0 0, 0 100, 50 100"></polygon>
+            <polygon class="triangle__right" points="100 0, 100 100, 50 100"></polygon>
+          </svg>
         </div>
-        <div class="developer__info">
-          <p>Личный сайт веб-разработчика</p>
+      </section>
+      <section class="content">
+        <div class="blog">
+          <div class="blog__left">
+            <ul class="contents">
+              <li class="contents__item contents__item--active">Самое важное в SASS</li>
+              <li class="contents__item">Приёмы в вёрстке, без которых не обходится ни один сайт</li>
+              <li class="contents__item">Самый необходимый набор Gulp плагинов</li>
+              <li class="contents__item">Почему я выбрал Jade</li>
+            </ul>
+          </div>
+          <div class="blog__right">
+            <div class="articles">
+              <div class="article">
+                <div class="article__title">Самое важное в SASS</div>
+                <div class="article__date">22 ноября 2016</div>
+                <div class="article__text">
+                  <p>Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.</p>
+                  <p>Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.</p>
+                  <p><img src="assets/images/blog-post.jpg" alt=""></p>
+                </div>
+              </div>
+              <div class="article">
+                <div class="article__title">Приёмы в вёрстке, без которых не обходится ни один сайт</div>
+                <div class="article__date">13 ноября 2016</div>
+                <div class="article__text">
+                  <p>Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.</p>
+                  <p>Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div><a class="arrow-down arrow-down_center" href="#"></a>
-    </section>
-    <section class="content"></section>
+      </section>
+    </main>
     <footer class="footer">
-      <div class="container container_justify_center footer__row">
-        <div class="col footer__column_left container_center_center">
+      <div class="footer__row">
+        <div class="footer__col">
           <nav class="menu">
             <ul class="menu__list">
               <li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
@@ -72,8 +108,8 @@
             </ul>
           </nav>
         </div>
-        <div class="col footer__column_right container_center_center">
-          <div class="socials">
+        <div class="footer__col">
+          <div class="socials footer__socials">
             <ul class="socials__list">
               <li class="socials__item"><a class="socials__link" href="https://vk.com/" target="_blank">
                   <svg class="social-icon social-icon__vk social-icon__rounded">
@@ -92,11 +128,11 @@
         </div>
       </div>
       <hr>
-      <div class="container container_justify_center footer__row footer__text--semitransparent">
-        <div class="col footer__column_left container_center_center">
+      <div class="footer__row">
+        <div class="footer__col">
           <p>Я веб-разработчик из Новосибирска, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.</p>
         </div>
-        <div class="col footer__column_right container_center_center">
+        <div class="footer__col footer__col--text_right">
           <p>&copy Владимир Астахов | создано с любовью в LoftSchool | 2016</p>
         </div>
       </div>
