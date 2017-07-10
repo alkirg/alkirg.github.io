@@ -21,34 +21,87 @@
       <div class="header__login"><a class="header__login_button" href="login.html">Авторизоваться</a></div>
     </header>
     <main class="main">
-      <div class="user-info main__user_info">
-        <div class="user-info__image"><img src="assets/images/index-hero.jpg" alt=""></div>
-        <div class="user-info__person">
-          <div class="user-info__name">Владимир Астахов</div>
-          <div class="user-info__subtitle">Личный сайт веб разработчика</div>
+      <div class="flip">
+        <div class="user-info main__user_info">
+          <div class="user-info__image"><img src="assets/images/index-hero.jpg" alt=""></div>
+          <div class="user-info__person">
+            <div class="user-info__name">Владимир Астахов</div>
+            <div class="user-info__subtitle">Личный сайт веб разработчика</div>
+          </div>
+          <div class="socials user-info__socials">
+            <ul class="socials__list">
+              <li class="socials__item"><a class="socials__link" href="https://vk.com/" target="_blank">
+                  <svg class="social-icon social-icon__vk">
+                    <use xlink:href="assets/images/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="https://github.com/" target="_blank">
+                  <svg class="social-icon social-icon__github">
+                    <use xlink:href="assets/images/sprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="https://linkedin.com/" target="_blank">
+                  <svg class="social-icon social-icon__in">
+                    <use xlink:href="assets/images/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="user-info__links"><a class="user-info__link" href="works.html">Мои работы</a><a class="user-info__link" href="about.html">Обо мне</a><a class="user-info__link" href="blog.html">Блог</a>
+          </div>
         </div>
-        <div class="socials user-info__socials">
-          <ul class="socials__list">
-            <li class="socials__item"><a class="socials__link" href="https://vk.com/" target="_blank">
-                <svg class="social-icon social-icon__vk">
-                  <use xlink:href="assets/images/sprite.svg#vk"></use>
-                </svg></a></li>
-            <li class="socials__item"><a class="socials__link" href="https://github.com/" target="_blank">
-                <svg class="social-icon social-icon__github">
-                  <use xlink:href="assets/images/sprite.svg#github"></use>
-                </svg></a></li>
-            <li class="socials__item"><a class="socials__link" href="https://linkedin.com/" target="_blank">
-                <svg class="social-icon social-icon__in">
-                  <use xlink:href="assets/images/sprite.svg#in"></use>
-                </svg></a></li>
-          </ul>
+        <!--extends ../_template-->
+        <!---->
+        <!--block variables-->
+        <!--    --->
+        <!--        var title = 'Login page'-->
+        <!--        var pageClass = 'page-login'-->
+        <!---->
+        <!--block content-->
+        <!--    main.main.page-login__content-->
+        <div class="login-form main__login_form">
+          <div class="title title__subtitle">Авторизуйтесь</div>
+          <div class="login-form__input_block">
+            <div class="login-form__icon icon icon-login"></div>
+            <input class="login-form__input" id="login" placeholder="Логин" type="text">
+          </div>
+          <div class="login-form__input_block">
+            <div class="login-form__icon icon icon-password"></div>
+            <input class="login-form__input" id="password" placeholder="Пароль" type="password">
+          </div>
+          <div class="login-form__check">
+            <input class="login-form__checkbox" id="checkbox" type="checkbox">
+            <label class="login-form__label login-form__label--checkbox" for="checkbox">Я человек</label>
+          </div>
+          <p class="login-form__question">Вы точно не робот?</p>
+          <div class="login-form__radiobox">
+            <div class="login-form__radio">
+              <input class="login-form__radio_button" id="radio1" type="radio" name="radio">
+              <label class="login-form__label login-form__label--radio" for="radio1">Да</label>
+            </div>
+            <div class="login-form__radio">
+              <input class="login-form__radio_button" id="radio2" type="radio" name="radio">
+              <label class="login-form__label login-form__label--radio" for="radio2">Не уверен</label>
+            </div>
+          </div>
+          <div class="login-form__buttons"><a class="login-form__button" href="/">На главную</a><a class="login-form__button login-form__button--submit" href="#">Войти</a></div>
         </div>
-        <div class="user-info__links"><a class="user-info__link" href="works.html">Мои работы</a><a class="user-info__link" href="about.html">Обо мне</a><a class="user-info__link" href="blog.html">Блог</a>
-        </div>
+        <!--block footer-->
+        <!--    footer.footer-->
+        <!--        .copyright © Владимир Астахов | создано с любовью в LoftSchool | 2016-->
       </div>
     </main>
     <footer class="footer">
       <div class="copyright">© Владимир Астахов | создано с любовью в LoftSchool | 2016</div>
     </footer>
+    <div class="popup popup_hidden">
+      <div class="popup__form">
+        <div class="popup__message"></div>
+        <button class="popup__close" type="button">Закрыть</button>
+      </div>
+    </div>
+    <div class="preloader">
+      <div class="preloader__spinner">
+        <div class="preloader__animation"></div>
+        <div class="preloader__percents">0%</div>
+      </div>
+    </div>
   </body>
 </html>
