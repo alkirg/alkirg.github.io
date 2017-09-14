@@ -179,28 +179,31 @@ var slides = slider.children();
 var slidesCount = slides.length;
 var slideSpeed = 500;
 var slideEasing = 'linear';
-var sliderHammer = new Hammer(document.querySelector('.slider'));
+var sliderHammer = void 0;
 var slideIndex = 1;
 
 var run = function run() {
-	var currentSlide = slides.first();
-	currentSlide.addClass('current');
-	slider.append('<div class="slider__count"><strong>1</strong> / ' + slidesCount + '</div><div class="slider__pager slider__back"></div><div class="slider__pager slider__front"></div>');
+	if (slides.length) {
+		sliderHammer = new Hammer(document.querySelector('.slider'));
+		var currentSlide = slides.first();
+		currentSlide.addClass('current');
+		slider.append('<div class="slider__count"><strong>1</strong> / ' + slidesCount + '</div><div class="slider__pager slider__back"></div><div class="slider__pager slider__front"></div>');
 
-	$('.slider__pager').click(function () {
-		if ($(this).hasClass('slider__back')) currentSlide = prev(currentSlide);else currentSlide = next(currentSlide);
-		$('.slider__count strong').text(slideIndex);
-	});
+		$('.slider__pager').click(function () {
+			if ($(this).hasClass('slider__back')) currentSlide = prev(currentSlide);else currentSlide = next(currentSlide);
+			$('.slider__count strong').text(slideIndex);
+		});
 
-	sliderHammer.on('swipeleft', function () {
-		currentSlide = prev(currentSlide);
-		$('.slider__count strong').text(slideIndex);
-	});
+		sliderHammer.on('swipeleft', function () {
+			currentSlide = prev(currentSlide);
+			$('.slider__count strong').text(slideIndex);
+		});
 
-	sliderHammer.on('swiperight', function () {
-		currentSlide = next(currentSlide);
-		$('.slider__count strong').text(slideIndex);
-	});
+		sliderHammer.on('swiperight', function () {
+			currentSlide = next(currentSlide);
+			$('.slider__count strong').text(slideIndex);
+		});
+	}
 };
 
 var next = function next(currentSlide) {
