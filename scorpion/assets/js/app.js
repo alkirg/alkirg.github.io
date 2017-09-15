@@ -119,6 +119,7 @@ var run = function run() {
 			$('.mainmenu__items--active').mouseenter(function () {
 				$(this).addClass('mainmenu__items--active');
 				showShadow();
+				keepShadow = true;
 			});
 			$('.mainmenu__items--active').mouseleave(function () {
 				$(this).removeClass('mainmenu__items--active');
@@ -168,13 +169,17 @@ var showShadow = function showShadow() {
 	if (!keepShadow) {
 		$('body').prepend('<div class="shadow"></div>');
 		var shadow = $('.shadow');
-		shadow.hide();
-		shadow.show(200);
+		shadow.css('opacity', 0);
+		shadow.animate({ opacity: '.5' }, 200);
 	}
 };
 
 var removeShadow = function removeShadow() {
-	if (!keepShadow) $('.shadow').remove();
+	if (!keepShadow) {
+		var shadow = $('.shadow');
+		shadow.animate({ opacity: '0' }, 200);
+		shadow.remove();
+	}
 };
 
 var isMobile = function isMobile() {
