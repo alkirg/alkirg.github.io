@@ -170,14 +170,14 @@ var showShadow = function showShadow() {
 		$('body').prepend('<div class="shadow"></div>');
 		var shadow = $('.shadow');
 		shadow.css('opacity', 0);
-		shadow.animate({ opacity: '.5' }, 200);
+		shadow.animate({ opacity: '.5' }, 100);
 	}
 };
 
 var removeShadow = function removeShadow() {
 	if (!keepShadow) {
 		var shadow = $('.shadow');
-		shadow.animate({ opacity: '0' }, 200);
+		shadow.animate({ opacity: '0' }, 100);
 		shadow.remove();
 	}
 };
