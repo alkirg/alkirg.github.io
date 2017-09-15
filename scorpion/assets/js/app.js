@@ -164,14 +164,14 @@ var run = function run() {
 var showShadow = function showShadow() {
 	if (!keepShadow) {
 		$('body').prepend('<div class="shadow"></div>');
-		var _shadow = $('.shadow');
-		_shadow.hide();
-		_shadow.show(200);
+		var shadow = $('.shadow');
+		shadow.hide();
+		shadow.show(200);
 	}
 };
 
 var removeShadow = function removeShadow() {
-	if (!keepShadow) shadow.remove();
+	if (!keepShadow) $('.shadow').remove();
 };
 
 var isMobile = function isMobile() {
