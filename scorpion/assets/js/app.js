@@ -104,6 +104,7 @@ var menu = nav.children('.mainmenu__items');
 var menuItem = $('.mainmenu__item');
 var menuLink = $('.mainmenu__link');
 var mobileShown = false;
+var keepShadow = false;
 
 var run = function run() {
 	if (!isMobile()) {
@@ -114,18 +115,20 @@ var run = function run() {
 		menuLink.mouseenter(function () {
 			$(this).next().addClass('mainmenu__items--active');
 			showShadow();
+			keepShadow = true;
 			$('.mainmenu__items--active').mouseenter(function () {
 				$(this).addClass('mainmenu__items--active');
 				showShadow();
 			});
 			$('.mainmenu__items--active').mouseleave(function () {
 				$(this).removeClass('mainmenu__items--active');
-				$('.shadow').remove();
+				keepShadow = false;
+				removeShadow();
 			});
 		});
 		menuLink.mouseleave(function () {
 			$(this).next().removeClass('mainmenu__items--active');
-			$('.shadow').remove();
+			removeShadow();
 		});
 	} else {
 		var navMobile = nav;
@@ -159,12 +162,16 @@ var run = function run() {
 };
 
 var showShadow = function showShadow() {
-	if ($('.shadow').length == 0) {
+	if (!keepShadow) {
 		$('body').prepend('<div class="shadow"></div>');
-		var shadow = $('.shadow');
-		shadow.hide();
-		shadow.show(200);
+		var _shadow = $('.shadow');
+		_shadow.hide();
+		_shadow.show(200);
 	}
+};
+
+var removeShadow = function removeShadow() {
+	if (!keepShadow) shadow.remove();
 };
 
 var isMobile = function isMobile() {
