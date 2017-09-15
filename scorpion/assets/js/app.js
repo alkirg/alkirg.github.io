@@ -128,6 +128,9 @@ var run = function run() {
 		});
 		menuLink.mouseleave(function () {
 			$(this).next().removeClass('mainmenu__items--active');
+		});
+		$('.mainmenu__items').mouseleave(function () {
+			keepShadow = false;
 			removeShadow();
 		});
 	} else {
