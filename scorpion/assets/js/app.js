@@ -113,10 +113,10 @@ var run = function run() {
 		});
 		menuLink.mouseenter(function () {
 			$(this).next().addClass('mainmenu__items--active');
-			if ($('.shadow').length == 0) $('body').prepend('<div class="shadow"></div>');
+			showShadow();
 			$('.mainmenu__items--active').mouseenter(function () {
 				$(this).addClass('mainmenu__items--active');
-				if ($('.shadow').length == 0) $('body').prepend('<div class="shadow"></div>');
+				showShadow();
 			});
 			$('.mainmenu__items--active').mouseleave(function () {
 				$(this).removeClass('mainmenu__items--active');
@@ -155,6 +155,15 @@ var run = function run() {
 				mobileShown = true;
 			}
 		});
+	}
+};
+
+var showShadow = function showShadow() {
+	if ($('.shadow').length == 0) {
+		$('body').prepend('<div class="shadow"></div>');
+		var shadow = $('.shadow');
+		shadow.hide();
+		shadow.show(200);
 	}
 };
 
@@ -215,7 +224,7 @@ var next = function next(currentSlide) {
 	}
 	nextSlide.css('left', '-100%');
 	nextSlide.animate({ left: 0 }, slideSpeed, slideEasing);
-	currentSlide.animate({ left: '200%' }, slideSpeed, slideEasing, function () {
+	currentSlide.animate({ left: '100%' }, slideSpeed, slideEasing, function () {
 		currentSlide.removeClass('current');
 		nextSlide.addClass('current').css('left', 0);
 	});
@@ -229,7 +238,7 @@ var prev = function prev(currentSlide) {
 		nextSlide = slides.last();
 		slideIndex = slidesCount;
 	}
-	nextSlide.css('left', '200%');
+	nextSlide.css('left', '100%');
 	nextSlide.animate({ left: 0 }, slideSpeed, slideEasing);
 	currentSlide.animate({ left: '-100%' }, slideSpeed, slideEasing, function () {
 		currentSlide.removeClass('current');
