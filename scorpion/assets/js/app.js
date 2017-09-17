@@ -138,7 +138,7 @@ var run = function run() {
 		var navMobile = nav;
 		navMobile.click(function () {
 			if (!mobileShown) {
-				navMobile.prepend('<div class="mobilemenu__close"></div>');
+				navMobile.prepend('<div class="icon_close"></div>');
 				navMobile.addClass('mobilemenu').animate({ left: '0px' }, 200);
 				$('body').prepend(navMobile);
 				$('.search').parent().prepend('<div class="mainmenu"></div>');
@@ -146,7 +146,7 @@ var run = function run() {
 				$('.mobilemenu__shadow').animate({ left: '300px' }, 200);
 				$('.search').css('margin-left', 'auto');
 				$('.mainmenu__parent').removeClass('mainmenu__parent');
-				$('.mobilemenu__close, .mobilemenu__shadow').click(function () {
+				$('.mobilemenu .icon_close, .mobilemenu__shadow').click(function () {
 					navMobile.animate({ left: '-300px' }, 200, function () {
 						$(this).removeClass('mobilemenu');
 					});
