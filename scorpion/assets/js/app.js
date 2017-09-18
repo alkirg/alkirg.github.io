@@ -78,11 +78,21 @@ var _slider = __webpack_require__(2);
 
 var _slider2 = _interopRequireDefault(_slider);
 
+var _gallery = __webpack_require__(3);
+
+var _gallery2 = _interopRequireDefault(_gallery);
+
+var _cart = __webpack_require__(4);
+
+var _cart2 = _interopRequireDefault(_cart);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 $(document).ready(function () {
 	(0, _menu2.default)();
 	(0, _slider2.default)();
+	(0, _gallery2.default)();
+	(0, _cart2.default)();
 });
 
 $(window).resize(function () {
@@ -260,6 +270,135 @@ var prev = function prev(currentSlide) {
 		nextSlide.addClass('current').css('left', 0);
 	});
 	return nextSlide;
+};
+
+exports.default = run;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var gallery = $('.gallery');
+var galleryFull = $('.gallery__full');
+var thumbs = gallery.find('.gallery__thumb');
+
+var run = function run() {
+	// prepareGallery();
+	thumbs.click(function (e) {
+		var thumb = $(e.target);
+		var imageCurrent = $('.gallery__main');
+		var imageNext = $('.gallery__main--hidden');
+		if (imageNext.length == 0) {
+			galleryFull.append('<img src="' + thumb.attr('data-img') + '" class="gallery__main--hidden">');
+			imageNext = $('.gallery__main--hidden');
+		}
+		imageCurrent.animate({ top: '-100%' }, 200, function () {
+			imageCurrent.attr('class', 'gallery__main--hidden');
+			// imageCurrent.css('top', '100%');
+		});
+		imageNext.animate({ top: '0' }, 200, function () {
+			imageNext.attr('class', 'gallery__main');
+		});
+	});
+};
+
+var prepareGallery = function prepareGallery() {
+	var img = new Array();
+	thumbs.each(function () {
+		img.push($(this).attr('data-img'));
+	});
+	gallery.append('<img src="' + img[0] + '" class="gallery__main">');
+	img.shift();
+	img.forEach(function (image) {
+		gallery.append('<img src="' + image + '" class="gallery__main--hidden">');
+	});
+};
+
+exports.default = run;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var run = function run() {
+	$('.cart__button--less').click(function () {
+		var that = $(this);
+		if (!that.hasClass('cart__button--disabled')) {
+			var input = that.next();
+			var newVal = parseInt(input.val()) - 1;
+			input.val(newVal);
+			if (newVal == 1) that.addClass('cart__button--disabled');
+			input.change();
+		}
+	});
+
+	$('.cart__button--more').click(function () {
+		var that = $(this);
+		var input = that.prev();
+		var newVal = parseInt(input.val()) + 1;
+		input.val(newVal);
+		if (newVal == 2) input.prev().removeClass('cart__button--disabled');
+		input.change();
+	});
+
+	$('.cart__count').change(function () {
+		var that = $(this);
+		var value = parseInt(that.val());
+		if (value) {
+			that.val(value);
+			if (value == 1) that.prev().addClass('cart__button--disabled');
+		} else {
+			that.val(1);
+			that.prev().addClass('cart__button--disabled');
+		}
+
+		countCart();
+	});
+
+	$('.cart__remove a').click(function (e) {
+		e.preventDefault();
+
+		var that = $(this);
+		$.get(that.attr('href'), function (data) {
+			if (data.delete) {
+				var tr = that.parents('tr');
+				tr.fadeOut(400, function () {
+					tr.remove();
+					countCart();
+				});
+			}
+		});
+	});
+};
+
+var countCart = function countCart() {
+	var cartTotal = 0;
+
+	$('.cart__item_price').each(function () {
+		var that = $(this);
+		var count = parseInt(that.next().find('.cart__count').val());
+		var total = parseFloat(that.children('strong').html().substr(1)) * count;
+		cartTotal += parseFloat(total.toFixed(2));
+		that.siblings('.cart__item_total').children('strong').html('$' + formatPrice(total.toFixed(2)));
+	});
+
+	$('.cart__total_price strong').html('$' + formatPrice(cartTotal.toFixed(2)));
+};
+
+var formatPrice = function formatPrice(value) {
+	return Intl.NumberFormat('en-US', { 'minimumFractionDigits': 2 }).format(value).replace(',', ' ');
 };
 
 exports.default = run;
