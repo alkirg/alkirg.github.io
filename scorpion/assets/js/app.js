@@ -289,35 +289,30 @@ var galleryFull = $('.gallery__full');
 var thumbs = gallery.find('.gallery__thumb');
 
 var run = function run() {
-	// prepareGallery();
+	prepareGallery();
 	thumbs.click(function (e) {
 		var thumb = $(e.target);
 		var imageCurrent = $('.gallery__main');
 		var imageNext = $('.gallery__main--hidden');
-		if (imageNext.length == 0) {
-			galleryFull.append('<img src="' + thumb.attr('data-img') + '" class="gallery__main--hidden">');
-			imageNext = $('.gallery__main--hidden');
+		if (imageCurrent.attr('src') !== thumb.attr('data-img')) {
+			thumbs.removeClass('gallery__thumb--active');
+			imageNext.animate({ top: '-100%' }, function () {
+				$(this).attr('src', imageCurrent.attr('src'));
+				$(this).css('top', '0');
+			});
+			imageCurrent.animate({ top: '-100%' }, function () {
+				$(this).attr('src', thumb.attr('data-img'));
+				$(this).css('top', '0');
+				thumb.addClass('gallery__thumb--active');
+			});
 		}
-		imageCurrent.animate({ top: '-100%' }, 200, function () {
-			imageCurrent.attr('class', 'gallery__main--hidden');
-			// imageCurrent.css('top', '100%');
-		});
-		imageNext.animate({ top: '0' }, 200, function () {
-			imageNext.attr('class', 'gallery__main');
-		});
 	});
 };
 
 var prepareGallery = function prepareGallery() {
-	var img = new Array();
-	thumbs.each(function () {
-		img.push($(this).attr('data-img'));
-	});
-	gallery.append('<img src="' + img[0] + '" class="gallery__main">');
-	img.shift();
-	img.forEach(function (image) {
-		gallery.append('<img src="' + image + '" class="gallery__main--hidden">');
-	});
+	var imageCurrent = $('.gallery__main');
+	thumbs.first().addClass('gallery__thumb--active');
+	galleryFull.append('<img src="' + imageCurrent.attr('src') + '" class="gallery__main--hidden">');
 };
 
 exports.default = run;
@@ -376,7 +371,9 @@ var run = function run() {
 				var tr = that.parents('tr');
 				tr.fadeOut(400, function () {
 					tr.remove();
-					countCart();
+					if ($('.cart__table tr').length > 1) countCart();else {
+						$('.main .cart').html('<p class="error">Your cart is empty.</p>');
+					}
 				});
 			}
 		});
