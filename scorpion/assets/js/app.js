@@ -86,6 +86,10 @@ var _cart = __webpack_require__(4);
 
 var _cart2 = _interopRequireDefault(_cart);
 
+var _compare = __webpack_require__(5);
+
+var _compare2 = _interopRequireDefault(_compare);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 $(document).ready(function () {
@@ -93,6 +97,7 @@ $(document).ready(function () {
 	(0, _slider2.default)();
 	(0, _gallery2.default)();
 	(0, _cart2.default)();
+	(0, _compare2.default)();
 });
 
 $(window).resize(function () {
@@ -396,6 +401,29 @@ var countCart = function countCart() {
 
 var formatPrice = function formatPrice(value) {
 	return Intl.NumberFormat('en-US', { 'minimumFractionDigits': 2 }).format(value).replace(',', ' ');
+};
+
+exports.default = run;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var run = function run() {
+	$('.compare__item .icon_close').click(function () {
+		var that = $(this);
+		var item = that.parent();
+		item.fadeOut(400, function () {
+			item.remove();
+			if ($('.compare__item').length == 0) $('.compare').html('<p class="error">You have nothing to compare.</p>');
+		});
+	});
 };
 
 exports.default = run;
