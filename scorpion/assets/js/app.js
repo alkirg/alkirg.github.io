@@ -169,7 +169,7 @@ var run = function run() {
 						$('.header, .main, .footer').unwrap();
 						$('.header__row--yellow .header__row .mainmenu').remove();
 						$('.header__row--yellow .header__row').prepend(nav);
-						$('.mobilemenu__close').remove();
+						$('.mainmenu .icon_close').remove();
 						$('.search').css('margin-left', '');
 						mobileShown = false;
 					});
