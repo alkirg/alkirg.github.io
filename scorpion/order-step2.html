@@ -99,13 +99,15 @@
         <form class="order__form">
           <div class="order__row">
             <label class="order__label">Shipping Method:</label>
-            <select class="order__select">
-              <option>EMS</option>
-              <option>DHL</option>
-              <option>FedEx</option>
-              <option>UPS</option>
-              <option>Registered air parcel POST</option>
-            </select>
+            <div class="select order__select">
+              <select>
+                <option>EMS</option>
+                <option>DHL</option>
+                <option>FedEx</option>
+                <option>UPS</option>
+                <option>Registered air parcel POST</option>
+              </select>
+            </div>
           </div>
           <div class="order__row">
             <label class="order__label">Shipment Rates:</label>
@@ -113,13 +115,15 @@
           </div>
           <div class="order__row">
             <label class="order__label">Shipment Origin:</label>
-            <p>Hong Kong</p>
+            <div class="order__origin">Hong Kong</div>
           </div>
           <p>Duty and Tax aren’t added to the order total.</p>
-          <table class="table_2col">
+          <table class="table_2col order__table">
             <tr>
               <th>Shipping Method</th>
-              <th>Estimated delivery time</th>
+              <th>Estimated delivery time
+                <div class="icon_required"></div>
+              </th>
             </tr>
             <tr>
               <td>FedEx</td>
@@ -142,11 +146,13 @@
               <td>7-12 days</td>
             </tr>
           </table>
-          <p>The estimated delivery time is exclude the custom clearance processing time and only applied to major countries and cities.</p>
+          <p>
+            <div class="icon_required"></div> The estimated delivery time is exclude the custom clearance processing time and only applied to major countries and cities.
+          </p>
           <p>For remote area, it might require additional transit time and custom clearance. </p>
-          <p>For details of delivery date, please contact our representative at support@spihk.com</p>
-          <button class="button button_grey">Recalculate</button>
-          <button class="button">Next</button>
+          <p>For details of delivery date, please contact our representative at <a href="mailto:support@spihk.com">support@spihk.com</a></p>
+          <button class="button button_grey order__button">Recalculate</button>
+          <button class="button order__button">Next</button>
         </form>
       </div>
     </main>

@@ -97,7 +97,7 @@
       <h1>Order step 3 of 3: Payment</h1>
       <div class="order">
         <form class="order__form">
-          <table class="table_2col">
+          <table class="table_2col order__table">
             <tr>
               <td>Products cost:</td>
               <td>$449.99</td>
@@ -106,21 +106,27 @@
               <td>Shipment rates:</td>
               <td>$0.00</td>
             </tr>
-            <tr>
+            <tr class="table__row--grey">
               <td> <strong>Order Total:</strong></td>
               <td> <strong>$449.99</strong></td>
             </tr>
           </table>
           <h2>Gift certificate</h2>
-          <label class="order__label" for="cert">Enter certificate code:</label>
-          <input class="order__input" id="cert">
+          <p>
+            <label class="order__label" for="cert">Enter certificate code:</label><br>
+            <input class="order__input" id="cert" type="text">
+          </p>
           <button class="button button_green">Activate certificate</button>
           <hr>
           <h2>Payment type:</h2>
-          <select class="order__select">
-            <option>PayPal</option>
-            <option>Credit card</option>
-          </select>
+          <p>
+            <div class="select order__select">
+              <select>
+                <option>PayPal</option>
+                <option>Credit card</option>
+              </select>
+            </div>
+          </p>
           <button class="button">Process payment</button>
         </form>
       </div>
