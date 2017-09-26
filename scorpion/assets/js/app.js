@@ -292,10 +292,12 @@ Object.defineProperty(exports, "__esModule", {
 var gallery = $('.gallery');
 var galleryFull = $('.gallery__full');
 var thumbs = gallery.find('.gallery__thumb');
+var itemNumber = 1;
 
 var run = function run() {
 	prepareGallery();
 	thumbs.click(function (e) {
+		console.log(e);
 		var thumb = $(e.target);
 		var imageCurrent = $('.gallery__main');
 		var imageNext = $('.gallery__main--hidden');
