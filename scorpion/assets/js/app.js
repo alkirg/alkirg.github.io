@@ -80,8 +80,6 @@ var _slider2 = _interopRequireDefault(_slider);
 
 var _gallery = __webpack_require__(3);
 
-var _gallery2 = _interopRequireDefault(_gallery);
-
 var _cart = __webpack_require__(4);
 
 var _cart2 = _interopRequireDefault(_cart);
@@ -95,13 +93,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 $(document).ready(function () {
 	(0, _menu2.default)();
 	(0, _slider2.default)();
-	(0, _gallery2.default)();
+	(0, _gallery.runGallery)();
 	(0, _cart2.default)();
 	(0, _compare2.default)();
 });
 
 $(window).resize(function () {
 	(0, _menu2.default)();
+	(0, _gallery.prepareGallery)();
 });
 
 /***/ }),
@@ -292,22 +291,28 @@ Object.defineProperty(exports, "__esModule", {
 var gallery = $('.gallery');
 var galleryFull = $('.gallery__full');
 var thumbs = gallery.find('.gallery__thumb');
-var itemNumber = 1;
+var itemOrder = 1;
 
-var run = function run() {
+var runGallery = function runGallery() {
 	prepareGallery();
 	thumbs.click(function (e) {
-		console.log(e);
 		var thumb = $(e.target);
 		var imageCurrent = $('.gallery__main');
 		var imageNext = $('.gallery__main--hidden');
+		var newOrder = thumb.attr('data-order');
+		var top = void 0;
+		if (newOrder > itemOrder) top = '-100%';else {
+			imageNext.css('top', '-200%');
+			top = '100%';
+		}
+		itemOrder = newOrder;
 		if (imageCurrent.attr('src') !== thumb.attr('data-img')) {
 			thumbs.removeClass('gallery__thumb--active');
 			imageNext.animate({ top: '-100%' }, function () {
 				$(this).attr('src', imageCurrent.attr('src'));
 				$(this).css('top', '0');
 			});
-			imageCurrent.animate({ top: '-100%' }, function () {
+			imageCurrent.animate({ top: top }, function () {
 				$(this).attr('src', thumb.attr('data-img'));
 				$(this).css('top', '0');
 				thumb.addClass('gallery__thumb--active');
@@ -319,10 +324,19 @@ var run = function run() {
 var prepareGallery = function prepareGallery() {
 	var imageCurrent = $('.gallery__main');
 	thumbs.first().addClass('gallery__thumb--active');
-	galleryFull.append('<img src="' + imageCurrent.attr('src') + '" class="gallery__main--hidden">');
+	galleryFull.height(imageCurrent.height());
+	if (galleryFull.children('.gallery__main--hidden').length == 0) {
+		galleryFull.append('<img src="' + imageCurrent.attr('src') + '" class="gallery__main--hidden">');
+		var order = 1;
+		thumbs.each(function () {
+			$(this).attr('data-order', order);
+			order++;
+		});
+	}
 };
 
-exports.default = run;
+exports.runGallery = runGallery;
+exports.prepareGallery = prepareGallery;
 
 /***/ }),
 /* 4 */
