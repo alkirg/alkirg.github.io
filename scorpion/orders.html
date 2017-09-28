@@ -94,15 +94,63 @@
             <div class="breadcrumb__item"><a class="breadcrumb__link" href="#">Home</a></div><span class="breadcrumb__item--current">My account</span>
           </div>
       <h1>My orders</h1>
-      <div class="orders"><strong>Show orders:</strong>
-        <div class="select orders__select">
-          <select>
-            <option>Current</option>
-            <option>Delivered</option>
-            <option>Canceled</option>
-          </select>
+      <div class="orders">
+        <div class="orders__row"><strong>Show orders:</strong>
+          <div class="select orders__select">
+            <select>
+              <option>Current</option>
+              <option>Delivered</option>
+              <option>Canceled</option>
+            </select>
+          </div>
         </div>
-        <table class="orders__table"></table>
+        <div class="orders__table_wrap">
+          <table class="orders__table">
+            <tr class="orders__head">
+              <th>ID</th>
+              <th>Items</th>
+              <th>Ship to</th>
+              <th>Date</th>
+              <th>Payment method</th>
+              <th>Total</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>3940</td>
+              <td><a href="#">Scorpion SII-3026 Brushless Motor Kit</a></td>
+              <td>
+                 Anthony Jones<br>Lenina st., 125-75, Yaroslavl, Russia<br>150000
+                Shipped by: DHL
+              </td>
+              <td>01.06.2017</td>
+              <td>Balance</td>
+              <td>$99.99</td>
+              <td>Processing</td>
+            </tr>
+            <tr>
+              <td>2597</td>
+              <td><a href="#">Scorpion S-1804-1650KV</a></td>
+              <td>Anthony Jones<br>Lenina st., 125-75, Yaroslavl, Russia<br>150000
+                Shipped by: Custom
+              </td>
+              <td>25.12.2016</td>
+              <td>Credit Card</td>
+              <td>$38.99</td>
+              <td>Processing</td>
+            </tr>
+            <tr>
+              <td>2597</td>
+              <td><a href="#">Scorpion SII-6530-150KV</a></td>
+              <td>Anthony Jones<br>Lenina st., 125-75, Yaroslavl, Russia<br>150000
+                Shipped by: Custom
+              </td>
+              <td>25.07.2016</td>
+              <td>Balance</td>
+              <td>$399.99</td>
+              <td>Processing</td>
+            </tr>
+          </table>
+        </div>
       </div>
     </main>
     <footer class="footer">
