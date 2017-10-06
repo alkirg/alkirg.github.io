@@ -126,7 +126,7 @@ var run = function run() {
 			var current = $(this);
 			if (current.children().length == 2) current.addClass('mainmenu__parent');
 		});
-		menuLink.mouseenter(function () {
+		menuLink.on('mouseenter', function () {
 			$(this).next().addClass('mainmenu__items--active');
 			showShadow();
 			keepShadow = true;
@@ -141,10 +141,10 @@ var run = function run() {
 				removeShadow();
 			});
 		});
-		menuLink.mouseleave(function () {
+		menuLink.on('mouseleave', function () {
 			$(this).next().removeClass('mainmenu__items--active');
 		});
-		$('.mainmenu__items').mouseleave(function () {
+		$('.mainmenu__items').on('mouseleave', function () {
 			keepShadow = false;
 			removeShadow();
 		});
@@ -180,7 +180,7 @@ var run = function run() {
 };
 
 var showShadow = function showShadow() {
-	if (!keepShadow) {
+	if (!keepShadow && !isMobile()) {
 		$('body').prepend('<div class="shadow"></div>');
 		var shadow = $('.shadow');
 		shadow.css('opacity', 0);
@@ -191,13 +191,14 @@ var showShadow = function showShadow() {
 var removeShadow = function removeShadow() {
 	if (!keepShadow) {
 		var shadow = $('.shadow');
-		shadow.animate({ opacity: '0' }, 100);
-		shadow.remove();
+		shadow.animate({ opacity: '0' }, 100, function () {
+			shadow.remove();
+		});
 	}
 };
 
 var isMobile = function isMobile() {
-	return !menu.is(':visible');
+	return $('.main').width() <= 970;
 };
 
 exports.default = run;
