@@ -88,6 +88,10 @@ var _compare = __webpack_require__(5);
 
 var _compare2 = _interopRequireDefault(_compare);
 
+var _validate = __webpack_require__(6);
+
+var _validate2 = _interopRequireDefault(_validate);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 $(document).ready(function () {
@@ -96,6 +100,7 @@ $(document).ready(function () {
 	(0, _gallery.runGallery)();
 	(0, _cart2.default)();
 	(0, _compare2.default)();
+	(0, _validate2.default)();
 });
 
 $(window).resize(function () {
@@ -441,6 +446,35 @@ var run = function run() {
 			if ($('.compare__item').length == 0) $('.compare').html('<p class="error">You have nothing to compare.</p>');
 		});
 	});
+};
+
+exports.default = run;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var run = function run() {
+    var elements = $('input[required]');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].oninvalid = function (e) {
+            e.preventDefault();
+            this.classList.add('error');
+        };
+    }
+    elements = $('select[required]');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].oninvalid = function (e) {
+            e.preventDefault();
+            $(this).parent().addClass('error');
+        };
+    }
 };
 
 exports.default = run;
