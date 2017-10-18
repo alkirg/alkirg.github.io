@@ -140,18 +140,22 @@ var run = function run() {
 				showShadow();
 				keepShadow = true;
 			});
-			$('.mainmenu__items--active').mouseleave(function () {
-				$(this).removeClass('mainmenu__items--active');
-				keepShadow = false;
-				removeShadow();
+			$('.mainmenu__items--active').mouseleave(function (e) {
+				if (!(e.pageY > $('.mainmenu').position().top && e.pageY <= $('.mainmenu').position().top + $('.mainmenu').height())) {
+					$(this).removeClass('mainmenu__items--active');
+					keepShadow = false;
+					removeShadow();
+				}
 			});
 		});
 		menuLink.on('mouseleave', function () {
 			$(this).next().removeClass('mainmenu__items--active');
 		});
-		$('.mainmenu__items').on('mouseleave', function () {
-			keepShadow = false;
-			removeShadow();
+		$('.mainmenu__items').on('mouseleave', function (e) {
+			if (!(e.pageY > $('.mainmenu').position().top && e.pageY <= $('.mainmenu').position().top + $('.mainmenu').height())) {
+				keepShadow = false;
+				removeShadow();
+			}
 		});
 	} else {
 		var navMobile = nav;
