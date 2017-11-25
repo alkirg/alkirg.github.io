@@ -127,10 +127,11 @@ var keepShadow = false;
 
 var run = function run() {
 	if (!isMobile()) {
-		menuItem.each(function () {
-			var current = $(this);
-			if (current.children().length == 2) current.addClass('mainmenu__parent');
-		});
+		// menuItem.each(function () {
+		// 	let current = $(this);
+		// 	if (current.children().length == 2)
+		// 		current.addClass('mainmenu__parent');
+		// });
 		menuLink.on('mouseenter', function () {
 			$(this).next().addClass('mainmenu__items--active');
 			showShadow();
