@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,700,900" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/foundation.css">
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/modules/swiper.min.css">
     <script src="assets/js/foundation.js" defer></script>
     <script src="assets/js/app.js" defer></script><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
@@ -90,7 +91,16 @@
       </div>
     </header>
     <main class="main">
-      <div class="slider"><img class="slider__image" src="assets/img/slider.jpg"><img class="slider__image" src="assets/img/slider.jpg"><img class="slider__image" src="assets/img/slider.jpg"></div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><a href="#"><img src="assets/img/slider.jpg"></a></div>
+          <div class="swiper-slide"><a href="#"><img src="assets/img/slider.jpg"></a></div>
+          <div class="swiper-slide"><a href="#"><img src="assets/img/slider.jpg"></a></div>
+        </div>
+        <div class="slider__count"></div>
+        <div class="slider__pager slider__back"></div>
+        <div class="slider__pager slider__front"></div>
+      </div>
       <div class="bestsellers">
         <div class="caption">Best sellers</div>
         <div class="bestsellers__items">

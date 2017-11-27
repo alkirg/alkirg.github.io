@@ -95,8 +95,19 @@ var _validate2 = _interopRequireDefault(_validate);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 $(document).ready(function () {
+	var swiper = new Swiper('.swiper-container', {
+		loop: true,
+		pagination: {
+			el: '.slider__count',
+			type: 'fraction'
+		},
+		navigation: {
+			nextEl: '.slider__front',
+			prevEl: '.slider__back'
+		}
+	});
 	(0, _menu2.default)();
-	(0, _slider2.default)();
+	// slider();
 	(0, _gallery.runGallery)();
 	(0, _cart2.default)();
 	(0, _compare2.default)();
@@ -299,9 +310,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 var gallery = $('.gallery');
-var galleryFull = $('.gallery__full');
 var thumbs = gallery.find('.gallery__thumb');
-// let itemOrder = 1;
 
 var runGallery = function runGallery() {
 	prepareGallery();
@@ -317,9 +326,7 @@ var runGallery = function runGallery() {
 };
 
 var prepareGallery = function prepareGallery() {
-	var imageCurrent = $('.gallery__main');
 	thumbs.first().addClass('gallery__thumb--active');
-	galleryFull.height(imageCurrent.height());
 };
 
 exports.runGallery = runGallery;
