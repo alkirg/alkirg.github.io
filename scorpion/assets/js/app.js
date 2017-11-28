@@ -74,23 +74,15 @@ var _menu = __webpack_require__(1);
 
 var _menu2 = _interopRequireDefault(_menu);
 
-var _slider = __webpack_require__(2);
+var _gallery = __webpack_require__(2);
 
-var _slider2 = _interopRequireDefault(_slider);
-
-var _gallery = __webpack_require__(3);
-
-var _cart = __webpack_require__(4);
+var _cart = __webpack_require__(3);
 
 var _cart2 = _interopRequireDefault(_cart);
 
-var _compare = __webpack_require__(5);
+var _compare = __webpack_require__(4);
 
 var _compare2 = _interopRequireDefault(_compare);
-
-var _validate = __webpack_require__(6);
-
-var _validate2 = _interopRequireDefault(_validate);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -107,11 +99,9 @@ $(document).ready(function () {
 		}
 	});
 	(0, _menu2.default)();
-	// slider();
 	(0, _gallery.runGallery)();
 	(0, _cart2.default)();
 	(0, _compare2.default)();
-	(0, _validate2.default)();
 });
 
 $(window).resize(function () {
@@ -233,82 +223,6 @@ exports.default = run;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-var slider = $('.slider');
-var slides = slider.children();
-var slidesCount = slides.length;
-var slideSpeed = 500;
-var slideEasing = 'linear';
-var sliderHammer = void 0;
-var slideIndex = 1;
-
-var run = function run() {
-	if (slides.length) {
-		sliderHammer = new Hammer(document.querySelector('.slider'));
-		var currentSlide = slides.first();
-		currentSlide.addClass('current');
-		slider.append('<div class="slider__count"><strong>1</strong> / ' + slidesCount + '</div><div class="slider__pager slider__back"></div><div class="slider__pager slider__front"></div>');
-
-		$('.slider__pager').click(function () {
-			if ($(this).hasClass('slider__back')) currentSlide = prev(currentSlide);else currentSlide = next(currentSlide);
-			$('.slider__count strong').text(slideIndex);
-		});
-
-		sliderHammer.on('swipeleft', function () {
-			currentSlide = prev(currentSlide);
-			$('.slider__count strong').text(slideIndex);
-		});
-
-		sliderHammer.on('swiperight', function () {
-			currentSlide = next(currentSlide);
-			$('.slider__count strong').text(slideIndex);
-		});
-	}
-};
-
-var next = function next(currentSlide) {
-	var nextSlide = currentSlide.next('.slider__image');
-	slideIndex++;
-	if (nextSlide.length == 0) {
-		nextSlide = slides.first();
-		slideIndex = 1;
-	}
-	nextSlide.css('left', '-100%');
-	nextSlide.animate({ left: 0 }, slideSpeed, slideEasing);
-	currentSlide.animate({ left: '100%' }, slideSpeed, slideEasing, function () {
-		currentSlide.removeClass('current');
-		nextSlide.addClass('current').css('left', 0);
-	});
-	return nextSlide;
-};
-
-var prev = function prev(currentSlide) {
-	var nextSlide = currentSlide.prev('.slider__image');
-	slideIndex--;
-	if (nextSlide.length == 0) {
-		nextSlide = slides.last();
-		slideIndex = slidesCount;
-	}
-	nextSlide.css('left', '100%');
-	nextSlide.animate({ left: 0 }, slideSpeed, slideEasing);
-	currentSlide.animate({ left: '-100%' }, slideSpeed, slideEasing, function () {
-		currentSlide.removeClass('current');
-		nextSlide.addClass('current').css('left', 0);
-	});
-	return nextSlide;
-};
-
-exports.default = run;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
 var gallery = $('.gallery');
 var thumbs = gallery.find('.gallery__thumb');
 
@@ -333,7 +247,7 @@ exports.runGallery = runGallery;
 exports.prepareGallery = prepareGallery;
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -401,12 +315,12 @@ var countCart = function countCart() {
 	$('.cart__item_price').each(function () {
 		var that = $(this);
 		var count = parseInt(that.next().find('.cart__count').val());
-		var total = parseFloat(that.children('strong').html().substr(1)) * count;
+		var total = parseFloat(that.children('strong').children('span').html()) * count;
 		cartTotal += parseFloat(total.toFixed(2));
-		that.siblings('.cart__item_total').children('strong').html('$' + formatPrice(total.toFixed(2)));
+		that.siblings('.cart__item_total').children('strong').children('span').html(formatPrice(total.toFixed(2)));
 	});
 
-	$('.cart__total_price strong').html('$' + formatPrice(cartTotal.toFixed(2)));
+	$('.cart__total_price strong span').html(formatPrice(cartTotal.toFixed(2)));
 };
 
 var formatPrice = function formatPrice(value) {
@@ -416,7 +330,7 @@ var formatPrice = function formatPrice(value) {
 exports.default = run;
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -434,35 +348,6 @@ var run = function run() {
 			if ($('.compare__item').length == 0) $('.compare').html('<p class="error">You have nothing to compare.</p>');
 		});
 	});
-};
-
-exports.default = run;
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var run = function run() {
-    var elements = $('input[required]');
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].oninvalid = function (e) {
-            e.preventDefault();
-            this.classList.add('error');
-        };
-    }
-    elements = $('select[required]');
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].oninvalid = function (e) {
-            e.preventDefault();
-            $(this).parent().addClass('error');
-        };
-    }
 };
 
 exports.default = run;
