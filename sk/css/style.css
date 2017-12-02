@@ -50,6 +50,8 @@ a:hover {
 	display: -o-flex;
 	display: flex;
 	flex-flow: column nowrap;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
 }
 
@@ -228,6 +230,8 @@ a:hover {
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 	-ms-align-items: center;
 	align-items: center;
@@ -314,6 +318,8 @@ a:hover {
 	-ms-flex-flow: row wrap;
 	-o-flex-flow: row wrap;
 	flex-flow: row wrap;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
 	list-style: none;
 }
@@ -345,6 +351,8 @@ a:hover {
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
 	margin-bottom: 52px;
 }
