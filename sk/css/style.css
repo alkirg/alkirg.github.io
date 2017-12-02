@@ -4,7 +4,12 @@ body {
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
+	-webkit-flex-flow: column nowrap;
+	-moz-flex-flow: column nowrap;
+	-ms-flex-flow: column nowrap;
+	-o-flex-flow: column nowrap;
 	flex-flow: column nowrap;
+	-ms-align-items: center;
 	align-items: center;
 	font-family: Roboto, sans-serif;
 	color: #000000;
@@ -224,6 +229,7 @@ a:hover {
 	display: -o-flex;
 	display: flex;
 	justify-content: center;
+	-ms-align-items: center;
 	align-items: center;
 	text-decoration: none;
 	transition: opacity .2s;
@@ -303,6 +309,10 @@ a:hover {
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	-o-flex-flow: row wrap;
 	flex-flow: row wrap;
 	justify-content: space-between;
 	list-style: none;
@@ -401,6 +411,10 @@ a:hover {
 		display: none;
 	}
 	.header {
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
 		flex-direction: column;
 	}
 	.logo {
@@ -429,6 +443,10 @@ a:hover {
 		width: 40px;
 	}
 	.button__subscribe_mobile {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
 		display: flex;
 	}
 	.button__main {
