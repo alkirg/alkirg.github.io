@@ -138,25 +138,25 @@ var run = function run() {
 				keepShadow = true;
 			});
 			$('.mainmenu__items--active').mouseleave(function (e) {
-				// if (!(e.pageY > $('.mainmenu').position().top && e.pageY <= $('.mainmenu').position().top + $('.mainmenu').height())) {
 				$(this).removeClass('mainmenu__items--active');
 				if (!(e.pageY > $('.mainmenu').position().top && e.pageY <= $('.mainmenu').position().top + $('.mainmenu').height())) {
 					keepShadow = false;
 					removeShadow();
 				}
-				// }
 			});
 		});
 		menuLink.on('mouseleave', function () {
 			$(this).next().removeClass('mainmenu__items--active');
 		});
 		$('.mainmenu__items').on('mouseleave', function (e) {
-			// if (!(e.pageY > $('.mainmenu').position().top && e.pageY <= $('.mainmenu').position().top + $('.mainmenu').height())) {
 			if (!(e.pageY > $('.mainmenu').position().top && e.pageY <= $('.mainmenu').position().top + $('.mainmenu').height())) {
 				keepShadow = false;
 				removeShadow();
 			}
-			// }
+		});
+		nav.on('mouseleave', function (e) {
+			keepShadow = false;
+			removeShadow();
 		});
 	} else {
 		var navMobile = nav;
