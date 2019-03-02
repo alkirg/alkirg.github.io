@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Главная</title>
+    <title>Регистрация</title>
     <meta content="" name="author">
     <meta content="" name="description">
     <meta content="" name="keywords">
@@ -19,108 +19,117 @@
   </head>
   <body>
     <header class="header header--transparent">
-      <div class="header__inner"><a class="logo2" href="#"></a>
+      <div class="header__inner"><a class="logo logo--white" href="#"></a>
         <nav class="menu">
-          <ul>
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">Новости</a></li>
-            <li><a href="#">Задания</a></li>
-            <li><a href="#">Рейтинг</a></li>
-            <li><a href="#">О конкурсе</a></li>
+          <ul class="menu__list">
+            <li class="menu__item"><a class="menu__link" href="#">Главная</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Новости</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Задания</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Рейтинг</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">О конкурсе</a></li>
           </ul>
         </nav>
-        <div class="header__login"><a class="header__login_link" href="#"></a></div>
+        <div class="header__login header__login--white"><a class="header__login_link" href="#"></a></div>
       </div>
     </header>
     <main class="main">
-      <h1>Регистрация</h1>
-      <form>
-        <div class="registration">
-          <div class="registration__message">Вы уже заполнили поля</div>
-          <div class="registration__fields">
-            <div class="registration__field">
-              <label class="registration__label">Имя:</label>
-              <input class="registration__input" type="text" placeholder="Имя" value="Анна" readonly>
-            </div>
-            <div class="registration__field">
-              <label class="registration__label">Фамилия:</label>
-              <input class="registration__input" type="text" placeholder="Фамилия" value="Иванова" readonly>
-            </div>
-            <div class="registration__field">
-              <label class="registration__label">Email:</label>
-              <input class="registration__input" type="email" placeholder="Email" value="mail@domen.ru" readonly>
-            </div>
-            <div class="registration__field">
-              <label class="registration__label">Полное наименование организации:</label>
-              <textarea class="registration__textarea" placeholder="Введите текст" value="" readonly></textarea>
-            </div>
-            <div class="registration__field">
-              <label class="registration__label">Должность:</label>
-              <input class="registration__input" type="text" placeholder="Должность" value="Завуч школы" readonly>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <h2>Обязательная информация</h2>
-        <div class="registration">
-          <div class="registration__message">Завершите регистрацию в конкурсе, выполняйте задания и получайте ценные призы!</div>
-          <div class="registration__fields">
-            <div class="registration__field">
-              <label class="registration__label">Отчество:</label>
-              <input class="registration__input" type="text" placeholder="Отчество">
-            </div>
-            <div class="registration__field">
-              <label class="registration__label">Мобильный телефон:</label>
-              <input class="registration__input" type="text" placeholder="Мобильный телефон" value="+7 (915) 125-25-25">
-            </div>
-            <div class="registration__field">
-              <label class="registration__label">Дата рождения:</label>
-              <input class="registration__input registration__input--date" type="text" placeholder="Дата рождения">
-            </div>
-            <div class="registration__field">
-              <label class="registration__label">Населенный пункт:</label>
-              <textarea class="registration__textarea" placeholder="Населенный пункт"></textarea>
+      <div class="wrapper">
+        <h1>Регистрация</h1>
+        <form>
+          <div class="registration">
+            <div class="registration__message">Вы уже заполнили поля</div>
+            <div class="registration__fields">
+              <div class="registration__field">
+                <label class="registration__label">Имя:</label>
+                <input class="registration__input" type="text" placeholder="Имя" value="Анна" readonly>
+              </div>
+              <div class="registration__field">
+                <label class="registration__label">Фамилия:</label>
+                <input class="registration__input" type="text" placeholder="Фамилия" value="Иванова" readonly>
+              </div>
+              <div class="registration__field">
+                <label class="registration__label">Email:</label>
+                <input class="registration__input" type="email" placeholder="Email" value="mail@domen.ru" readonly>
+              </div>
+              <div class="registration__field">
+                <label class="registration__label">Полное наименование организации:</label>
+                <textarea class="registration__textarea" placeholder="Введите текст" value="" readonly></textarea>
+              </div>
+              <div class="registration__field">
+                <label class="registration__label">Должность:</label>
+                <input class="registration__input" type="text" placeholder="Должность" value="Завуч школы" readonly>
+              </div>
             </div>
           </div>
-        </div>
-        <hr>
-        <h2>Дополнительно</h2>
-        <div class="registration">
-          <div class="registration__message">Отправьте нам эти данные и сразу получите 150 вступительных баллов</div>
-          <div class="registration__fields">
-            <div class="registration__fields_left">
-              <div class="fileinput registration__fileinut"><img class="fileinput__icon" src="assets/img/icon-file.jpg">
-                <div class="fileinput__message">
-                  <p class="text-strong">Загрузите фото:</p>
-                  <p class="text-light">Размер изображения не должен превышать 5 Мб</p>
+          <hr>
+          <h2>Обязательная информация</h2>
+          <div class="registration">
+            <div class="registration__message">Завершите регистрацию в конкурсе, выполняйте задания и получайте ценные призы!</div>
+            <div class="registration__fields">
+              <div class="registration__field">
+                <label class="registration__label">Отчество:</label>
+                <input class="registration__input" type="text" placeholder="Отчество">
+              </div>
+              <div class="registration__field">
+                <label class="registration__label">Мобильный телефон: </label>
+                <input class="registration__input" type="text" placeholder="Мобильный телефон" value="+7 (915) 125-25-25">
+              </div>
+              <div class="registration__field">
+                <label class="registration__label">Дата рождения: <span class="required">*</span></label>
+                <input class="registration__input registration__input--date" type="text" placeholder="Дата рождения">
+              </div>
+              <div class="registration__field">
+                <label class="registration__label">Населенный пункт: <span class="required">*</span></label>
+                <textarea class="registration__textarea" placeholder="Населенный пункт"></textarea>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <h2>Дополнительно</h2>
+          <div class="registration">
+            <div class="registration__message">Отправьте нам эти данные и сразу получите 150 вступительных баллов</div>
+            <div class="registration__fields registration__fields_cols">
+              <div class="registration__fields_left">
+                <div class="fileinput registration__fileinput">
+                  <label for="file">
+                    <div class="fileinput__icon"></div>
+                    <div class="fileinput__message">
+                      <div class="text-strong">Загрузите фото:</div>
+                      <div class="text-light">Размер изображения не должен превышать 5 Мб</div>
+                    </div>
+                  </label>
+                  <input id="file" type="file">
+                </div>
+                <div class="registration__field">
+                  <label class="registration__label">Опыт работы в школе:</label>
+                  <input class="registration__input" type="text" placeholder="Стаж, полное количество лет">
                 </div>
               </div>
-              <div class="registration__field">
-                <label class="registration__label">Опыт работы в школе:</label>
-                <input class="registration__input" type="text" placeholder="Стаж, полное количество лет">
+              <div class="registration__fields_right">
+                <div class="registration__field">
+                  <label class="registration__label">Коротко о себе:
+                    <label class="registration__counter">0 из 300 символов</label>
+                  </label>
+                  <textarea class="registration__textarea registration__textarea--big" placeholder="Пожалуйста, немного расскажите о себе"></textarea>
+                </div>
               </div>
             </div>
-            <div class="registration__fields_right">
-              <div class="registration__field">
-                <label class="registration__label">Коротко о себе:</label>
-                <label class="registration__counter">0 из 300 символов</label>
-                <textarea class="registration__textarea" placeholder="Пожалуйста, немного расскажите о себе"></textarea>
-              </div>
-            </div>
+            <label class="label_checkbox registration__confirm">
+              <input class="registration__checkbox" type="checkbox" checked>Даю согласие на обработку персональных данных в соответствии с <a href="#">Политикой обработки персональных данных</a>
+            </label>
+            <button class="btn" type="submit">Зарегистрироваться</button>
           </div>
-          <label class="registration__confirm">
-            <input class="registration__checkbox" type="check">Даю согласие на обработку персональных данных в соответствии с <a href="#">Политикой обработки персональных данных</a>
-          </label>
-        </div>
-        <button class="btn" type="submit">Зарегистрироваться</button>
-      </form>
+        </form>
+      </div>
     </main>
     <footer class="footer">
-      <div class="footer__copyright">© Медиагруппа АКТИОН-МЦФЭР, 2019 <br><a href="#">Политика обработки персональных данных</a></div>
-      <div class="footer__phone">
-        <div class="footer__phone_title">Бесплатные звонки по россии:</div><a class="footer__phone_number" href="tel:88005119864">8 (800) 511-98-64</a><a class="footer__phone_mail" href="mailto:info@action-media.ru">info@action-media.ru</a>
+      <div class="footer__inner">
+        <div class="footer__copyright">© Медиагруппа АКТИОН-МЦФЭР, 2019 <br><a href="#">Политика обработки персональных данных</a></div>
+        <div class="footer__phone">
+          <div class="footer__phone_title">Бесплатные звонки по россии:</div><a class="footer__phone_number" href="tel:88005119864">8 (800) 511-98-64</a><a class="footer__phone_mail" href="mailto:info@action-media.ru">info@action-media.ru</a>
+        </div>
+        <div class="footer__social">Поделиться:<a class="footer__social_link footer__social_link--fb" href="#"></a><a class="footer__social_link footer__social_link--vk" href="#"></a><a class="footer__social_link footer__social_link--ok" href="#"></a></div>
       </div>
-      <div class="footer__social">Поделиться:<a class="footer__social_link footer__social_link--fb" href="#"></a><a class="footer__social_link footer__social_link--vk" href="#"></a><a class="footer__social_link footer__social_link--ok" href="#"></a></div>
     </footer>
   </body>
 </html>
